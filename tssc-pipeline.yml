@@ -1,0 +1,16 @@
+apiVersion: redhatgov.io/v1alpha1
+kind: TsscPipeline
+metadata:
+  name: getting-started
+spec:
+  appName: getting-started
+  appRepo:
+    destinationRepoName: getting-started
+    sourceUrl: >-
+      https://github.com/REPLACE/ME.git
+  autoStartPipeline: true
+  helmRepo:
+    destinationRepoName: getting-started-cloud-resources
+    sourceUrl: >-
+      https://github.com/andykrohg/ploigos-cloud-resources-template.git
+  serviceName: hello  

@@ -1,0 +1,20 @@
+---
+step-runner-config:
+  global-defaults:
+    application-name: getting-started
+    service-name: hello
+
+  create-container-image:
+  - implementer: Buildah
+    config:
+      imagespecfile: src/main/docker/Dockerfile.jvm
+
+  deploy:
+  - implementer: ArgoCD
+    config:
+      deployment-config-repo: http://gitea:3000/platform/getting-started-cloud-resources.git
+
+  uat:
+  - implementer: MavenSeleniumCucumber
+    config:
+      uat-maven-profile: native
