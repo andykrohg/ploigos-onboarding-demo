@@ -12,14 +12,20 @@
         -DclassName="org.acme.getting.started.GreetingResource" \
         -Dpath="/hello"
     ```
-3. Create the directory `cicd/ploigos-step-runner-config`, then copy sample configuration files into your project:
+3. Add configuration to your project to wire it up for Ploigos. Create the directory `getting-started/cicd/ploigos-step-runner-config`:
     ```bash
     mkdir -p getting-started/cicd/ploigos-step-runner-config
-
+    ```
+   Add a Jenkinsfile to `getting-started/cicd`, which simply invokes the `ploigos-jenkins-library`:
+    ```bash
     cp Jenkinsfile getting-started/cicd/
-
+    ```
+   Add the provided `config.yml` to `getting-started/cicd/ploigos-step-runner-config`. This file is comprised of application-level properties that complement platform-level configuration, which is managed by your `TsscPlatform` in a `ConfigMap` called `ploigos-platform-config`. Both config files will be passed to `ploigos-step-runner` for each pipeline step.
+    ```bash
     cp config.yml getting-started/cicd/ploigos-step-runner-config/
-
+    ```
+   Add the provided `sonar-project.properties` file to the `getting-started` directory. This serves as a generic configuration which tells the Sonarqube CLI, `sonar-scanner`, where to look for scanning targets during the `static-code-analysis` pipeline step.
+    ```bash
     cp sonar-project.properties getting-started/
     ```
 4. Initialize `getting-started` as a git repository, then push to github (or wherever):
