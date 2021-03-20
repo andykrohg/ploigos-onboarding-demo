@@ -7,5 +7,5 @@ retriever: modernSCM([
 
 // run the pipeline
 ploigosWorkflowStandard(
-    stepRunnerConfigDir: 'cicd/ploigos-step-runner-config/',
+    stepRunnerConfigDir: 'cicd/ploigos-step-runner-config/'
 )
