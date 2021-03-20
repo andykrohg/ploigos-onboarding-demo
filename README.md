@@ -1,4 +1,5 @@
 ## Apply a Greenfield app to ploigos
+This repository is intended to serve as a proof of concept for running a greenfield Maven application through a DevSecOps pipeline created by the [ploigos-software-factory-operator](https://github.com/ploigos/ploigos-software-factory-operator).
 1. Clone this repository and cd into it:
     ```bash
     git clone https://github.com/andykrohg/ploigos-onboarding-demo.git
